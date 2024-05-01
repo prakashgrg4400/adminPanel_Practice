@@ -1,4 +1,18 @@
 let state = true;
+
+// registerBtn.addEventListener("click", (event) => {
+//   event.target.style.backgroundColor = "rgb(68, 68, 122)";
+//   event.target.style.color = "white";
+//   signinBtn.style.backgroundColor = "white";
+//   signinBtn.style.color = "black";
+// });
+// signinBtn.addEventListener("click", (event) => {
+//   event.target.style.backgroundColor = "rgb(68, 68, 122)";
+//   event.target.style.color = "white";
+//   registerBtn.style.backgroundColor = "white";
+//   registerBtn.style.color = "black";
+// });
+
 function toggle() {
   state = !state;
   let sideNav = document.querySelector(".side-bar");
@@ -20,10 +34,18 @@ function toggle() {
   }
 }
 
-function handleRegisterAndSignin(setActive, setPassive) {
+function handleRegisterAndSignin(setActive, setPassive, btnActive, btnPassive) {
   //   alert();
   let active = document.querySelector(`.${setActive}`);
-  let passive = document.querySelector(`.${setPassive}`);
+  let btn1 = document.getElementById(btnActive);
+  console.log(btn1);
   active.style.display = "block";
+  btn1.setAttribute("class", "active");
+  console.log(btnPassive);
+
+  let passive = document.querySelector(`.${setPassive}`);
+  let btn2 = document.getElementById(btnPassive);
+  console.log(btn2);
   passive.style.display = "none";
+  btn2.setAttribute("class", "");
 }
