@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.2/css/all.min.css"
+    />
+    <script src="./js/index.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-bar">
+        <div class="side-bar-options">
+          <button onclick="handleRegisterAndSignin('register' , 'signin')">
+            Register
+          </button>
+          <button onclick="handleRegisterAndSignin('signin' , 'register')">
+            Sign in
+          </button>
+        </div>
+      </div>
+      <div class="section">
+        <nav class="top-navbar">
+          <div class="inside-navbar">
+            <button onclick="toggle()" class="toggler">
+              <i class="fa fa-bars"></i>
+            </button>
+            <h1 class="heading">Admin Panel</h1>
+          </div>
+        </nav>
+        <div class="section-content">
+          <div class="register">
+            <h1>Register</h1>
+          </div>
+          <div class="signin">
+            <h1>Sign in</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

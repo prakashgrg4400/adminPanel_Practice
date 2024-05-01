@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto;
+}
+
+.container {
+  background-color: rgb(225, 218, 218);
+  height: 100vh;
+}
+
+.side-bar {
+  position: fixed;
+  height: 100vh;
+  width: 250px;
+  background-image: radial-gradient(
+    circle farthest-corner at 48.4% 47.5%,
+    rgba(122, 183, 255, 1) 0%,
+    rgba(21, 83, 161, 1) 90%
+  );
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 8px rgb(106, 105, 105);
+}
+
+.section {
+  height: 100vh;
+  width: calc(100% - 250px);
+  background-color: white;
+  margin-left: 250px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgb(239, 245, 239);
+}
+
+.section .top-navbar {
+  /* border: 4px solid green; */
+  position: fixed;
+  top: 0;
+  left: 250px;
+  width: calc(100% - 250px);
+  padding: 1rem;
+  background-image: linear-gradient(
+    178.7deg,
+    rgba(126, 184, 253, 1) 5.6%,
+    rgba(2, 71, 157, 1) 95.3%
+  );
+  transition: all 0.3s ease-in-out;
+}
+
+.toggler {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 50%;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+.toggler:hover {
+  background-color: rgb(21, 21, 95);
+  color: white;
+}
+
+.heading {
+  color: white;
+  padding: 0.7rem;
+}
+
+.inside-navbar {
+  display: flex;
+}
+
+.side-bar-options {
+  /* border: 4px solid green; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.7rem;
+}
+.side-bar-options button {
+  padding: 0.7rem 0;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  border-radius: 1rem;
+}
+.side-bar-options button:hover {
+  background-color: rgb(68, 68, 122);
+  color: white;
+}
+
+.section-content {
+  padding: 6rem 1rem;
+  /* border: 10px solid green; */
+}
+.register,
+.signin {
+  border: 5px solid black;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .side-bar {
+    width: 0;
+  }
+  .section {
+    margin-left: 0;
+    width: 100%;
+  }
+  .section .top-navbar {
+    left: 0;
+    width: 100%;
+  }
+  .toggler {
+    display: block;
+  }
+}
