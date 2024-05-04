@@ -50,24 +50,49 @@
           </div>
         </nav>
         <div class="section-content">
-          <div class="register animate__animated animate__backInLeft">
+          <div class="register animate__animated animate__fadeIn">
             <h1 id="register-heading">Register</h1>
             <div class="register-form">
-              <form action="">
-                <input type="text" name="" id="" placeholder="Your name here" />
+              <form action="" name="registerForm" onsubmit="handleSubmit(event)">
+                <input type="text" name="name" id="" placeholder="Your name here" oninput="handleInput(this , 'name-message')" />
+                <p id="name-message"></p>
                 <input
                   type="email"
-                  name=""
+                  name="email"
                   id=""
                   placeholder="Your email here"
+                  oninput="handleInput(this , 'email-message')"
                 />
-                <input type="password" name="" id="" placeholder="*********" />
+                <p id="email-message"></p>
+                <input type="password" name="password" id="" placeholder="*********" oninput="handleInput(this , 'password-message')" />
+                <p id="password-message"></p>
                 <button>Register</button>
               </form>
             </div>
           </div>
+          <!-- /============================================================================== -->
           <div class="signin">
-            <h1>Sign in</h1>
+            <div class="register animate__animated animate__fadeIn">
+              <h1 id="register-heading">Sign in</h1>
+              <div class="register-form">
+                <form action="" name="signinForm">
+                  <!-- <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Your name here"
+                  /> -->
+                  <input
+                    type="email"
+                    name=""
+                    id=""
+                    placeholder="Your email here"
+                  />
+                  <input type="password" name="" id="" placeholder="password" />
+                  <button>Sign in</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
