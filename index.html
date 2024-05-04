@@ -53,8 +53,18 @@
           <div class="register animate__animated animate__fadeIn">
             <h1 id="register-heading">Register</h1>
             <div class="register-form">
-              <form action="" name="registerForm" onsubmit="handleSubmit(event)">
-                <input type="text" name="name" id="" placeholder="Your name here" oninput="handleInput(this , 'name-message')" />
+              <form
+                action=""
+                name="registerForm"
+                onsubmit="handleSubmit(event)"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="Your name here"
+                  oninput="handleInput(this , 'name-message')"
+                />
                 <p id="name-message"></p>
                 <input
                   type="email"
@@ -64,9 +74,18 @@
                   oninput="handleInput(this , 'email-message')"
                 />
                 <p id="email-message"></p>
-                <input type="password" name="password" id="" placeholder="*********" oninput="handleInput(this , 'password-message')" />
+                <div class="password-handler">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="*********"
+                    oninput="handleInput(this , 'password-message')"
+                  />
+                  <button type="button" onclick="handlePassword()"><i class="fa fa-eye " id="password-icon"></i></button>
+                </div>
                 <p id="password-message"></p>
-                <button>Register</button>
+                <button type="submit">Register</button>
               </form>
             </div>
           </div>

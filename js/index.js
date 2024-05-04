@@ -55,6 +55,7 @@ function handleSubmit(event) {
   //!==> We can select a form directly using "document.forms" , which will give us the a list of forms present in our html file inside a "HTMLCollection" . Now if you give "name" attribute to each form than we can directly select each form as shown below by directly writing the value present inside "name" attribut with the help of "document.forms.nae_attribute_value_here" .   The elements gives us all the "html element" present inside
   let registerForm = document.forms.registerForm;
   let elements = document.forms.registerForm.elements;
+  let user = {};
 
   let name = elements.name;
   let nameMessage = document.getElementById("name-message");
@@ -80,10 +81,16 @@ function handleSubmit(event) {
     passwordMessage.style.color = "red";
     passwordMessage.textContent = "Password required !";
     passwordMessage.style.display = "block";
+  } else if (password.value.length < 8) {
+    password.style.border = "1px solid red";
+    passwordMessage.style.color = "red";
+    passwordMessage.textContent = "Password length must be atleast 8 letters";
+    passwordMessage.style.display = "block";
   } else {
-    console.log(name.value);
-    console.log(email.value);
-    console.log(password.value);
+    user.name = name.value.trim();
+    user.email = email.value.trim();
+    user.password = password.value.trim();
+    console.log(user);
   }
 }
 
@@ -93,4 +100,17 @@ function handleInput(inputElement, errorMessageId) {
   errorMessage.style.textContent = "";
   errorMessage.style.color = "black";
   errorMessage.style.display = "none";
+}
+
+function handlePassword() {
+  let passwordIcon = document.getElementById("password-icon");
+  console.log(passwordIcon);
+  let passwordField = document.getElementById("password");
+  if (passwordField.type == "password") {
+    passwordField.type = "text";
+    passwordIcon.className = "fa fa-eye-slash";
+  } else if (passwordField.type == "text") {
+    passwordField.type = "password";
+    passwordIcon.className = "fa fa-eye";
+  }
 }
