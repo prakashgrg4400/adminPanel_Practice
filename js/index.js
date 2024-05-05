@@ -102,15 +102,43 @@ function handleInput(inputElement, errorMessageId) {
   errorMessage.style.display = "none";
 }
 
-function handlePassword() {
-  let passwordIcon = document.getElementById("password-icon");
+function handlePassword(password, icon) {
+  let passwordIcon = document.getElementById(icon);
   console.log(passwordIcon);
-  let passwordField = document.getElementById("password");
+  let passwordField = document.getElementById(password);
   if (passwordField.type == "password") {
     passwordField.type = "text";
     passwordIcon.className = "fa fa-eye-slash";
   } else if (passwordField.type == "text") {
     passwordField.type = "password";
     passwordIcon.className = "fa fa-eye";
+  }
+}
+
+function handleSignin(event) {
+  event.preventDefault();
+  let form = document.forms.signinForm;
+
+  let email = form.elements.email;
+  let emailMessage = document.getElementById("signin-email-message");
+
+  let password = form.elements.password;
+  let passwordMessage = document.getElementById("signin-password-message");
+
+  if (email.value.trim().length == 0) {
+    email.style.border = "1px solid red";
+    emailMessage.textContent = "Email required !";
+    emailMessage.style.color = "red";
+    emailMessage.style.display = "block";
+  } else if (password.value.trim().length == 0) {
+    password.style.border = "1px solid red";
+    passwordMessage.style.color = "red";
+    passwordMessage.textContent = "Password is required !";
+    passwordMessage.style.display = "block";
+  } else if (password.value.trim().length < 8) {
+    passwordMessage.style.color = "red";
+    passwordMessage.textContent = "Password should be atleast 8 character";
+    password.style.border = "1px solid red";
+    passwordMessage.style.display = "block";
   }
 }
